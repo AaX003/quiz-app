@@ -1,0 +1,50 @@
+.nav-btns__questions {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 0.66em 1.2em;
+}
+
+
+.number-btn {
+    background:rgb(3, 16, 60);
+    border: 2px solid rgba(73, 188, 255, 0.431);
+    border-radius: 10px;
+    padding: 0.56em;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    width: 100%;
+    max-width: 20%;
+    margin: 0 auto;
+    transition: transform 0.3s, background 0.3s;
+}
+
+
+.number-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(205deg, rgb(12, 52, 130), rgb(18, 65, 158), rgb(36, 107, 173),  rgb(9, 64, 126));
+}
+
+.back-btn {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 200px;
+    padding: .36em;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    background: rgb(0, 136, 255);
+    box-shadow: 0px 3px 10px rgba(0, 136, 255, 0.659);
+    transition: background 0.4s;
+}
+
+
+.back-btn:hover {
+    background: rgb(3, 52, 212);
+    box-shadow: 0px 3px 10px rgba(0, 0, 255, 0.48);
+    cursor: pointer;
+}

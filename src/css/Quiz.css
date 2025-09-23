@@ -1,0 +1,122 @@
+.quiz-screen {
+    background:rgb(3, 14, 50);
+    border: 2px solid rgba(73, 188, 255, 0.431);
+    border-radius: 10px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+
+.home-btn {
+    background:rgb(3, 14, 50);
+    border: 2px solid rgba(73, 188, 255, 0.187);
+    border-radius: 10px;
+    padding: 0.4rem 0.6rem;
+    margin: .6rem;
+    color: white;
+}
+
+
+.question {
+    font-weight: 600;
+    color: #fff;
+    font-size: 1.02em;
+}
+
+
+.question-container input[type="radio"] {
+    appearance: none;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 1.6ch;
+    background:rgb(2, 11, 40);
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    padding: 0.66em;
+    border: 2px solid rgba(73, 188, 255, 0.187);
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+label:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 2px 10px rgba(27, 138, 222, 0.547);
+}
+
+
+.progress {
+    color: rgba(255, 255, 255, 0.477);
+    font-weight: 500;
+    font-size: 1.3ch;
+}
+
+
+.results-container {
+    color: rgba(255, 255, 255, 0.477);
+    background:rgb(2, 11, 40);
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    padding: 0.66em;
+    border: 2px solid rgba(73, 188, 255, 0.187);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    height: 70vh;
+}
+
+
+.result-msg,
+.score {
+    text-align: center;
+}
+
+
+.larger-text {
+    font-size: 2.3rem;
+}
+
+
+.svg-wrapper__results {
+    display: flex;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 100%;
+    max-width: 20px;
+}
+
+
+.restart-btn, 
+.category-btn {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 2%;
+    width: 100%;
+    max-width: 350px;
+    padding: .36em;
+    border-radius: 10px;
+    border: 2px solid rgba(73, 188, 255, 0.187);
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+
+.restart-btn {
+    background: rgb(0, 136, 255);
+}
+
+
+.category-btn {
+    background: #000;
+}
