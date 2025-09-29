@@ -5,7 +5,6 @@ import { useState } from "react";
 
 // ICONS
 import { IoMdArrowBack } from "react-icons/io";
-import { RiResetLeftLine, RiHomeLine  } from "react-icons/ri";
 import { FcCheckmark } from "react-icons/fc";
 
 function AnimeQuiz() {
@@ -19,20 +18,20 @@ function AnimeQuiz() {
     const questionList = [
         {
             id: 1,
-            text: "Who is the main character of My Hero Academia?", 
+            text: "Who is the main character of My Hero Academia?",
             options: ["Todoroki", "Bakugou", "Deku", "Denki"],
             answer: "Deku"
         },
         {
             id: 2,
-            text: "What is the fighting technique called in Demon Slayer",
+            text: "What is the fighting technique called in Demon Slayer?",
             options: ["Nen", "Devil Fruit", "Breathing Styles", "Stands"],
             answer: "Breathing Styles"
         },
         {
             id: 3,
-            text: "Fill in the blank: The Phantom__",
-            options: ["Troupe", "Group", "Theives", "Gang"],
+            text: "Fill in the blank: The Phantom __",
+            options: ["Troupe", "Group", "Thieves", "Gang"],
             answer: "Troupe"
         },
         {
@@ -50,10 +49,35 @@ function AnimeQuiz() {
         {
             id: 6,
             text: "Who is the main antagonist from Death Note?",
-            options: ["Light Yagami", "L", "Mika", "Riku"],
+            options: ["Light Yagami", "L", "Misa Amane", "Ryuk"],
             answer: "Light Yagami"
+        },
+        {
+            id: 7,
+            text: "Who is the protagonist of Chainsaw Man?",
+            options: ["Denji", "Aki Hayakawa", "Makima", "Power"],
+            answer: "Denji"
+        },
+        {
+            id: 8,
+            text: "Which Pokémon is #025 in the Pokédex?",
+            options: ["Bulbasaur", "Eevee", "Pikachu", "Charmander"],
+            answer: "Pikachu"
+        },
+        {
+            id: 9,
+            text: "What is the Tokyo campus called in Jujutsu Kaisen?",
+            options: ["UA High", "Tokyo Jujutsu High", "Kyoto Jujutsu High", "Karasuno High"],
+            answer: "Tokyo Jujutsu High"
+        },
+        {
+            id: 10,
+            text: "In Fullmetal Alchemist, which forbidden practice cost Ed his arm and Al his body?",
+            options: ["Alkahestry", "Human Transmutation", "Equivalent Exchange", "Stone Forging"],
+            answer: "Human Transmutation"
         }
     ];
+
 
     const q = currentIndex;
     const currentQuestion = questionList[currentIndex];
@@ -165,8 +189,8 @@ return (
                     <h2 className="result-msg">You completed the quiz!</h2>
                     <p className="score"><span className="larger-text">{score}</span> / {questionList.length}</p>
                     <span className="svg-wrapper__results"><FcCheckmark /></span>
-                    <button className="restart-btn" onClick={restartGame}><RiResetLeftLine />Try Again</button>
-                    <Link to="/" className="category-btn"><RiHomeLine />Choose another category</Link>
+                    <button className="restart-btn" onClick={restartGame}>Try Again</button>
+                    <Link to="/" className="category-btn">Return Home</Link>
                </main>
             )}
         </section>

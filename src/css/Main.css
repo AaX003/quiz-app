@@ -5,6 +5,7 @@
 
 body {
   background: linear-gradient(95deg, rgb(3, 16, 60), rgb(3, 24, 75), rgba(2, 8, 58, 0.999));
+  overflow-x: hidden;
 }
 
 
@@ -37,7 +38,7 @@ body {
 .programming-section, 
 .science-section,
 .history-section,
-.math-section {
+.anime-section {
   background:rgb(3, 16, 60);
   border: 2px solid rgba(73, 188, 255, 0.431);
   border-radius: 10px;
@@ -81,6 +82,7 @@ svg {
   text-align: center;
 }
 
+
 .section-title {
   font-weight: 600;
   font-size: .98rem;
@@ -98,6 +100,7 @@ svg {
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  margin-bottom: 4%;
   width: 100%;
   max-width: 350px;
   padding: .36em;
@@ -116,4 +119,26 @@ svg {
   background: rgb(3, 52, 212);
   box-shadow: 0px 3px 10px rgba(0, 0, 255, 0.48);
   cursor: pointer;
+}
+
+
+@media (max-width: 480px) {
+  .category__main {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+
+  .programming-section, 
+  .science-section,
+  .history-section,
+  .anime-section  {
+    width: 90%;
+}
+
+
+  .start-btn {
+    width: 65%;
+    margin-bottom: 6%;
+  }
 }

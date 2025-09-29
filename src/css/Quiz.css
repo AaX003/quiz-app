@@ -88,10 +88,13 @@ label:hover {
 
 .svg-wrapper__results {
     display: flex;
-    margin: 0 auto;
-    padding: 1rem;
-    width: 100%;
-    max-width: 20px;
+    justify-self: center;
+    margin-bottom: 6%;
+}
+
+
+.svg-wrapper__results svg {
+    font-size: 3rem;
 }
 
 
@@ -119,4 +122,73 @@ label:hover {
 
 .category-btn {
     background: #000;
+}
+
+
+.restart-btn,
+.category-btn {
+    transition: transform 0.5s;
+}
+
+.restart-btn:hover,
+.category-btn:hover {
+    transform: scale(1.02);
+}
+
+
+/* MOBILITY */
+
+@media (max-width: 480px) {
+    .quiz-screen,
+    .results-container {
+        padding: .75rem;
+        width: 100%;
+        max-width: 260px;
+    }
+
+
+    .results-container {
+        height: 55vh;
+    }
+
+    .question {
+        font-size: .95rem;
+    }
+
+
+    .restart-btn,
+    .category-btn {
+        width: 100%;
+        max-width: 200px;
+        font-size: .78rem;
+        padding: .55rem;
+    }
+
+}
+
+
+@media (min-width: 800px) and (max-width: 1280px) {
+    .quiz-screen {
+        padding: 4rem;
+        width: 100%;
+        max-width: 450px;
+    }
+
+
+    .question,
+    .progress {
+        font-size: 1.5rem;
+    }
+
+
+    label {
+        font-size: 1.4rem;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width: 658px) {
+    .results-container {
+        height: 65vh;
+    }
 }

@@ -5,7 +5,6 @@ import { useState } from "react";
 
 // ICONS
 import { IoMdArrowBack } from "react-icons/io";
-import { RiResetLeftLine, RiHomeLine  } from "react-icons/ri";
 import { FcCheckmark } from "react-icons/fc";
 
 function ScienceQuiz() {
@@ -18,22 +17,22 @@ function ScienceQuiz() {
 
     const questionList = [
         {
-        id: 1,
-        text: "What is the smallest unit of matter?", 
-        options: ["Molecule", "Cell", "Atom", "Proton"],
-        answer: "Atom"
+            id: 1,
+            text: "What is the smallest unit of matter?",
+            options: ["Molecule", "Cell", "Atom", "Proton"],
+            answer: "Atom"
         },
         {
             id: 2,
-            text: "Which planet is known as the Red Planet",
+            text: "Which planet is known as the Red Planet?",
             options: ["Venus", "Mars", "Saturn", "Neptune"],
             answer: "Mars"
         },
         {
             id: 3,
             text: "What is the green substance in plants called?",
-            options: ["Chlorophyl", "Chloroform", "Bleach", "Aloe"],
-            answer: "Chlorophyl"
+            options: ["Chlorophyll", "Chloroform", "Bleach", "Aloe"],
+            answer: "Chlorophyll"
         },
         {
             id: 4,
@@ -52,6 +51,30 @@ function ScienceQuiz() {
             text: "What is the food-making process for plants?",
             options: ["Photosynthesis", "Transpiration", "Evaporation", "Cooking"],
             answer: "Photosynthesis"
+        },
+        {
+            id: 7,
+            text: "Which gas do plants absorb from the atmosphere?",
+            options: ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
+            answer: "Carbon dioxide"
+        },
+        {
+            id: 8,
+            text: "What is the SI unit of force?",
+            options: ["Joule", "Newton", "Watt", "Pascal"],
+            answer: "Newton"
+        },
+        {
+            id: 9,
+            text: "Which part of the cell contains most of the genetic material (DNA)?",
+            options: ["Ribosome", "Mitochondrion", "Nucleus", "Golgi apparatus"],
+            answer: "Nucleus"
+        },
+        {
+            id: 10,
+            text: "What type of chemical bond involves sharing electron pairs between atoms?",
+            options: ["Ionic", "Covalent", "Metallic", "Hydrogen"],
+            answer: "Covalent"
         }
     ];
 
@@ -165,8 +188,8 @@ return (
                     <h2 className="result-msg">You completed the quiz!</h2>
                     <p className="score"><span className="larger-text">{score}</span> / {questionList.length}</p>
                     <span className="svg-wrapper__results"><FcCheckmark /></span>
-                    <button className="restart-btn" onClick={restartGame}><RiResetLeftLine />Try Again</button>
-                    <Link to="/" className="category-btn"><RiHomeLine />Choose another category</Link>
+                    <button className="restart-btn" onClick={restartGame}>Try Again</button>
+                    <Link to="/" className="category-btn">Return Home</Link>
                </main>
             )}
         </section>

@@ -5,7 +5,6 @@ import { useState } from "react";
 
 // ICONS
 import { IoMdArrowBack } from "react-icons/io";
-import { RiResetLeftLine, RiHomeLine  } from "react-icons/ri";
 import { FcCheckmark } from "react-icons/fc";
 
 function HistoryQuiz() {
@@ -18,10 +17,10 @@ function HistoryQuiz() {
 
     const questionList = [
         {
-        id: 1,
-        text: "Which year did WWII end?", 
-        options: ["1954", "1955", "1945", "1944"],
-        answer: "1945"
+            id: 1,
+            text: "Which year did WWII end?",
+            options: ["1954", "1955", "1945", "1944"],
+            answer: "1945"
         },
         {
             id: 2,
@@ -37,9 +36,9 @@ function HistoryQuiz() {
         },
         {
             id: 4,
-            text: "Who painted the Mona Lisa",
-            options: ["Leonardo DiCaprio", "Frida Khalo", "Diego Rivera", "Leonardo Da Vinci"],
-            answer: "Leonardo Da Vinci"
+            text: "Who painted the Mona Lisa?",
+            options: ["Leonardo DiCaprio", "Frida Kahlo", "Diego Rivera", "Leonardo da Vinci"],
+            answer: "Leonardo da Vinci"
         },
         {
             id: 5,
@@ -52,8 +51,33 @@ function HistoryQuiz() {
             text: "What was Thomas Jefferson's house called?",
             options: ["The Jeffersons", "The Great Palace", "Monticello", "The Jefferson Cathedral"],
             answer: "Monticello"
+        },
+        {
+            id: 7,
+            text: "Which empire was ruled by Genghis Khan?",
+            options: ["Roman", "Mongol", "Ottoman", "Persian"],
+            answer: "Mongol"
+        },
+        {
+            id: 8,
+            text: "In what year did the Berlin Wall fall?",
+            options: ["1989", "1991", "1979", "1961"],
+            answer: "1989"
+        },
+        {
+            id: 9,
+            text: "Who delivered the 'I Have a Dream' speech?",
+            options: ["Martin Luther King Jr.", "Malcolm X", "John F. Kennedy", "Frederick Douglass"],
+            answer: "Martin Luther King Jr."
+        },
+        {
+            id: 10,
+            text: "Which city was the capital of the Byzantine Empire?",
+            options: ["Athens", "Rome", "Constantinople", "Alexandria"],
+            answer: "Constantinople"
         }
     ];
+
 
     const q = currentIndex;
     const currentQuestion = questionList[currentIndex];
@@ -165,8 +189,8 @@ return (
                     <h2 className="result-msg">You completed the quiz!</h2>
                     <p className="score"><span className="larger-text">{score}</span> / {questionList.length}</p>
                     <span className="svg-wrapper__results"><FcCheckmark /></span>
-                    <button className="restart-btn" onClick={restartGame}><RiResetLeftLine />Try Again</button>
-                    <Link to="/" className="category-btn"><RiHomeLine />Choose another category</Link>
+                    <button className="restart-btn" onClick={restartGame}>Try Again</button>
+                    <Link to="/" className="category-btn">Return Home</Link>
                </main>
             )}
         </section>

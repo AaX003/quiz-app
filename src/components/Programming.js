@@ -5,7 +5,6 @@ import { useState } from "react";
 
 // ICONS
 import { IoMdArrowBack } from "react-icons/io";
-import { RiResetLeftLine, RiHomeLine  } from "react-icons/ri";
 import { FcCheckmark } from "react-icons/fc";
 
 function ProgrammingQuiz() {
@@ -18,10 +17,10 @@ function ProgrammingQuiz() {
 
     const questionList = [
         {
-        id: 1,
-        text: "Which of the following is NOT a JavaScript datatype?", 
-        options: ["String", "Boolean", "Float", "Number"],
-        answer: "Float"
+            id: 1,
+            text: "Which of the following is NOT a JavaScript datatype?",
+            options: ["String", "Boolean", "Float", "Number"],
+            answer: "Float"
         },
         {
             id: 2,
@@ -52,6 +51,30 @@ function ProgrammingQuiz() {
             text: "Which HTML tag is used for creating hyperlinks?",
             options: ["<href>", "<link>", "<a>", "<url>"],
             answer: "<a>"
+        },
+        {
+            id: 7,
+            text: "In React, which hook is used to add state to a functional component?",
+            options: ["useFetch", "useState", "useClass", "useStore"],
+            answer: "useState"
+        },
+        {
+            id: 8,
+            text: "Which SQL command retrieves data from a table?",
+            options: ["GET", "SELECT", "FETCH", "QUERY"],
+            answer: "SELECT"
+        },
+        {
+            id: 9,
+            text: "Which HTTP status code means 'Not Found'?",
+            options: ["200", "301", "403", "404"],
+            answer: "404"
+        },
+        {
+            id: 10,
+            text: "Which Git command creates a new branch?",
+            options: ["git branch <name>", "git init <name>", "git switch -D", "git remote add <name>"],
+            answer: "git branch <name>"
         }
     ];
 
@@ -165,8 +188,8 @@ return (
                     <h2 className="result-msg">You completed the quiz!</h2>
                     <p className="score"><span className="larger-text">{score}</span> / {questionList.length}</p>
                     <span className="svg-wrapper__results"><FcCheckmark /></span>
-                    <button className="restart-btn" onClick={restartGame}><RiResetLeftLine />Try Again</button>
-                    <Link to="/" className="category-btn"><RiHomeLine />Choose another category</Link>
+                    <button className="restart-btn" onClick={restartGame}>Try Again</button>
+                    <Link to="/" className="category-btn">Return Home</Link>
                </main>
             )}
         </section>
