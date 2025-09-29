@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { FaCode } from "react-icons/fa";
 import { MdScience } from "react-icons/md";
 import { IoBookSharp } from "react-icons/io5";
-import { BiMath } from "react-icons/bi";
 import { SiCrunchyroll } from "react-icons/si";
 
 function MainScreen() {
