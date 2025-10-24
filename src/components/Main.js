@@ -28,19 +28,19 @@ function MainScreen() {
         <main id="science" className="science-section">
           <span className="svg-wrapper"><MdScience /></span>
           <h3 className="section-title">Science</h3>
-          <p className="section-desc">Explore scientific concepts</p>
+          <p className="section-desc">Test your knowledge of scientific concepts</p>
           <Link to="/science" className="start-btn">Start Quiz</Link>
         </main>
         <main id="history" className="history-section">
           <span className="svg-wrapper"><IoBookSharp /></span>
           <h3 className="section-title">History</h3>
-          <p className="section-desc">Journey through time</p>
+          <p className="section-desc">Test your knowledge about tribes and ancient civilizations</p>
            <Link to="/history" className="start-btn">Start Quiz</Link>
         </main>
         <main id="math" className="anime-section">
           <span className="svg-wrapper"><SiCrunchyroll /></span>
           <h3 className="section-title">Anime</h3>
-          <p className="section-desc">Think you know anime?</p>
+          <p className="section-desc">Test your knowledge about common and popular animes</p>
           <Link to="/anime" className="start-btn">Start Quiz</Link>
         </main>
       </section>

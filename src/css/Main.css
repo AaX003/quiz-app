@@ -1,144 +1,109 @@
-*::before, *::after {
-  box-sizing: border-box;
-}
-
-
-body {
-  background: linear-gradient(95deg, rgb(3, 16, 60), rgb(3, 24, 75), rgba(2, 8, 58, 0.999));
-  overflow-x: hidden;
-}
-
-
-.header, 
-.subheader {
-  text-align: center;
-}
-
-
-.header {
-  font-size: 1.25rem;
-  color: rgb(49, 110, 214);
-}
-
-
-.subheader {
-  font-size: 0.75rem;
-  color: rgba(108, 153, 231, 0.643);
-}
-
-
-.category__main {
+/* main container */
+.main {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 0.66em 1.2em;
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(135deg, #eef2ff 0%, #ffffff 100%);
+  font-family: "Poppins", system-ui, sans-serif;
+  color: #111;
+  padding: 2rem 1rem;
 }
 
+/* header */
+.header__main {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1e3a8a;
+}
+.subheader {
+  margin: 0.25rem 0 0;
+  color: #555;
+}
 
-.programming-section, 
-.science-section,
-.history-section,
-.anime-section {
-  background:rgb(3, 16, 60);
-  border: 2px solid rgba(73, 188, 255, 0.431);
-  border-radius: 10px;
-  padding: 0.56em;
+/* categories grid */
+.category__main {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   width: 100%;
-  max-width: 400px;
-  margin: 2rem auto;
-  color: rgb(255, 255, 255);
-  transition: transform 0.3s, background 0.3s;
+  max-width: 950px;
 }
 
-
-.programming-section:hover,
-.science-section:hover,
-.history-section:hover,
-.math-section:hover {
-  transform: scale(1.05);
-  background: linear-gradient(205deg, rgb(12, 52, 130), rgb(18, 65, 158), rgb(36, 107, 173),  rgb(9, 64, 126));
-}
-
-
-.svg-wrapper svg {
+/* category cards */
+.category__main main {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   display: flex;
-  margin: 0 auto;
-  background:rgb(7, 33, 117);
-  border: 2px solid rgba(73, 188, 255, 0.187);
-  border-radius: 10px;
-  padding: 1rem;
-  width: 100%;
-  max-width: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.category__main main:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.1);
 }
 
-
-svg {
-  font-size: 20px;
+/* icons */
+.svg-wrapper {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: #2563eb;
 }
 
-
-.section-title,
+/* text */
+.section-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111;
+}
 .section-desc {
+  margin: 0.25rem 0 1.25rem;
+  color: #555;
+  font-size: 0.9rem;
   text-align: center;
 }
 
-
-.section-title {
-  font-weight: 600;
-  font-size: .98rem;
-}
-
-
-.section-desc {
-  font-weight: 400;
-  color: rgba(212, 212, 212, 0.48);
-  font-size: .68rem;
-}
-
-
+/* start button */
 .start-btn {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  margin-bottom: 4%;
-  width: 100%;
-  max-width: 350px;
-  padding: .36em;
-  border-radius: 10px;
-  border: none;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
+  display: inline-block;
+  background: #2563eb;
+  color: #fff;
   font-weight: 600;
-  background: rgb(0, 136, 255);
-  box-shadow: 0px 3px 10px rgba(0, 136, 255, 0.659);
-  transition: background 0.4s;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  transition: background 0.25s ease, transform 0.15s ease;
 }
-
-
 .start-btn:hover {
-  background: rgb(3, 52, 212);
-  box-shadow: 0px 3px 10px rgba(0, 0, 255, 0.48);
-  cursor: pointer;
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+.start-btn:active {
+  transform: translateY(0);
 }
 
+/* slight category color hints (optional) */
+#code .svg-wrapper { color: #6366f1; }
+#science .svg-wrapper { color: #10b981; }
+#history .svg-wrapper { color: #f59e0b; }
+#math .svg-wrapper { color: #ef4444; }
 
+/* mobile */
 @media (max-width: 480px) {
-  .category__main {
-    gap: 1rem;
-    padding: 1rem;
-  }
-
-
-  .programming-section, 
-  .science-section,
-  .history-section,
-  .anime-section  {
-    width: 90%;
-}
-
-
-  .start-btn {
-    width: 65%;
-    margin-bottom: 6%;
-  }
+  .header { font-size: 1.6rem; }
+  .category__main main { padding: 1.2rem; }
+  .svg-wrapper { font-size: 2rem; }
+  .section-title { font-size: 1.1rem; }
 }

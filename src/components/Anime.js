@@ -3,9 +3,9 @@ import "../css/Quiz.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-// ICONS
-import { IoMdArrowBack } from "react-icons/io";
-import { FcCheckmark } from "react-icons/fc";
+// SVGS
+import { RiRestartLine } from "react-icons/ri";
+import { IoIosHome } from "react-icons/io";
 
 function AnimeQuiz() {
     const [choices, setChoices] = useState({});
@@ -14,6 +14,9 @@ function AnimeQuiz() {
     const [correct, setCorrect] = useState(false);
     const [showResults, setShowResults] = useState(false);
     const [score, setScore] = useState(0);
+
+    // helps reset game flow
+    const [gameKey, setGameKey] = useState(0);
 
     const questionList = [
         {
@@ -103,15 +106,25 @@ function AnimeQuiz() {
 
         // If it's the picked option: green if correct, red if wrong
         if (isSelected === option) {
-            return { backgroundColor: isCorrectOption ? "#0b702dff" : "#7f1f1fff" };
+            return { backgroundColor: isCorrectOption ? "#16d656ff" : "#e91717ff" };
         }
 
         // If the pick was wrong, also highlight the correct option
         if (!correct && isCorrectOption) {
-            return { backgroundColor: "#0b702dff" };
+            return { backgroundColor: "#16d656ff" };
         }
 
         return undefined;
+    }
+
+    const handleNext = () => {
+        setCurrentIndex(prev => prev + 1);
+        setWrong(false);
+        setCorrect(false);
+    }
+
+    const showResultsScreen = () => {
+        setShowResults(true); // enables the results screen to show
     }
 
     const restartGame = () => {
@@ -119,7 +132,11 @@ function AnimeQuiz() {
         setChoices({});
         setCurrentIndex(0);
         setShowResults(false);
+        setWrong(false);
+        setCorrect(false);
+        setGameKey(k => k + 1);
     }
+
 
     
 return (
@@ -127,10 +144,10 @@ return (
     <header id="anime-title" className="title">
       <h3 className="header">Anime</h3>
     </header>
-    <Link to="/" className="home-btn"><IoMdArrowBack /></Link>
+    <Link to="/" className="home-btn"><IoIosHome /></Link>
 
     {!showResults && (
-        <section id="quiz" className="quiz-screen">
+        <section id="quiz" key={gameKey} className="quiz-screen">
         <p className="progress">Question {currentIndex + 1} of {questionList.length}</p>
         <p className="question">{currentQuestion.text}</p>
         <main className="question-container">
@@ -158,19 +175,6 @@ return (
                     // flash feedback color
                     setWrong(!isRight);
                     setCorrect(isRight);
-
-                    // auto-advance after a short pause
-                    setTimeout(() => {
-                        const isLast = q === questionList.length - 1;
-                        if (isLast) {
-                        setShowResults(true);
-                        } else {
-                        setCurrentIndex(i => i + 1);
-                        // clear feedback for next question
-                        setWrong(false);
-                        setCorrect(false);
-                        }
-                    }, 1200);
                     }}
                     // prevent re-clicks during the 600ms feedback window
                     disabled={wrong || correct}
@@ -179,6 +183,12 @@ return (
                 </label>
             ))}
         </main>
+        <button 
+            className="next-btn" 
+            onClick={currentIndex === questionList.length - 1 ? showResultsScreen : handleNext}
+        >
+            {currentIndex === questionList.length - 1 ? "Show Results" : "Next Question"}
+        </button>
     </section>
     )}
     
@@ -188,9 +198,12 @@ return (
                <main className="results">
                     <h2 className="result-msg">You completed the quiz!</h2>
                     <p className="score"><span className="larger-text">{score}</span> / {questionList.length}</p>
-                    <span className="svg-wrapper__results"><FcCheckmark /></span>
-                    <button className="restart-btn" onClick={restartGame}>Try Again</button>
-                    <Link to="/" className="category-btn">Return Home</Link>
+
+                    <div className="btn-wrapper">
+                        <button className="category-btn" onClick={restartGame} aria-label="Restart game"><RiRestartLine /></button>
+                        <Link to="/" className="category-btn" aria-label="Home button"><IoIosHome /></Link>
+                    </div>
+
                </main>
             )}
         </section>
